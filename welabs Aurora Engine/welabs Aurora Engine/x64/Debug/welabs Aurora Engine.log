@@ -1,0 +1,8 @@
+﻿C:\Program Files\Microsoft Visual Studio\18\Insiders\MSBuild\Microsoft\VC\v180\Microsoft.CppBuild.targets(548,5): warning MSB8028: O diretório intermediário (x64\Debug\) contém arquivos compartilhados de outro projeto (welabs Aurora Engine.vcxproj). Isso pode levar a um comportamento incorreto de limpeza e recompilação.
+  glad.c
+  Engine.cpp
+C:\Users\Pichau\source\repos\welabs Aurora Engine\welabs Aurora Engine\Engine.cpp(251,17): warning C4804: '<': uso não seguro de tipo 'bool' em operação
+  main.cpp
+  Model.cpp
+  Gerando Código...
+  welabs Aurora Engine.vcxproj -> C:\Users\Pichau\source\repos\welabs Aurora Engine\x64\Debug\Aurora Render.exe

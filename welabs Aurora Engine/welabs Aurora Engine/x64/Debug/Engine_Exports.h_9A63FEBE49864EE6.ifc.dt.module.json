@@ -1,0 +1,22 @@
+{
+    "version": 1,
+    "revision": 0,
+    "rules": [
+        {
+            "primary-output": "x64\\Debug\\Engine_Exports.obj",
+            "outputs": [
+                "x64\\Debug\\Engine_Exports.h_9A63FEBE49864EE6.ifc.dt.module.json",
+                "x64\\Debug\\Engine_Exports.h_9A63FEBE49864EE6.ifc.dt.d.json",
+                "x64\\Debug\\Engine_Exports.h.ifc"
+            ],
+            "provides": [
+                {
+                    "logical-name": "C:\\Users\\Pichau\\source\\repos\\welabs Aurora Engine\\welabs Aurora Engine\\Engine_Exports.h",
+                    "source-path": "c:\\users\\pichau\\source\\repos\\welabs aurora engine\\welabs aurora engine\\engine_exports.h",
+                    "lookup-method": "absolute"
+                }
+            ],
+            "requires": []
+        }
+    ]
+}
