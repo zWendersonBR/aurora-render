@@ -1,6 +1,5 @@
 ![Demonstração da rotação do modelo na Aurora Render](assets/demo.gif)
 
-
 # ✨ Aurora Render
 
 
