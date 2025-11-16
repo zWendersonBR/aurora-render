@@ -1,6 +1,8 @@
+![Demonstração da rotação do modelo na Aurora Render](assets/demo.gif)
+
+
 # ✨ Aurora Render
 
-![Demonstração da rotação do modelo na Aurora Render](assets/demo.gif)
 
 ## Renderizador Gráfico de Baixo Nível, Open Source.
 
