@@ -2,75 +2,74 @@
 
 # ✨ Aurora Render
 
+## Low-Level, Open Source Graphics Renderer.
 
+The **Aurora Render** is a **Graphics Renderer and Engine** focused on performance and control, created specifically for the **Modding** and 3D Asset Development community. Our mission is to offer a fast and precise platform to inspect, validate, and prepare your 3D models before injecting them into games like **MTA/FiveM/DayZ/ARK** and other customizable simulators.
 
-## Renderizador Gráfico de Baixo Nível, Open Source.
-
-O **Aurora Render** é um **Renderizador e Motor Gráfico** focado em performance e controle, criado especificamente para a comunidade de **Modding** e Desenvolvimento de Assets 3D. Nossa missão é oferecer uma plataforma rápida e precisa para inspecionar, validar e preparar seus modelos 3D antes de injetá-los em jogos como **MTA/FiveM/DayZ/ARK** e simuladores que suportam customização.
-
-A versão atual é pré-alpha, o que significa que o renderizador está atualmente limitado à importação de modelos nos formatos .OBJ e .FBX.
+> [!WARNING]
+> The current version is **pre-alpha**, meaning the renderer is currently **limited** to importing models in the **.OBJ** and **.FBX** formats.
 
 ---
 
-## 📚 Dependências e Bibliotecas Principais
+## 📚 Core Dependencies and Libraries
 
-Para garantir o baixo nível de controle, performance e portabilidade, o Aurora Render depende das seguintes bibliotecas:
+To ensure low-level control, performance, and portability, Aurora Render relies on the following libraries:
 
-| Biblioteca | Versão | Função Principal |
+| Library | Version | Primary Function |
 | :--- | :--- | :--- |
-| **SDL (Simple DirectMedia Layer)** | 3.0+ | Gerenciamento de janelas, contexto OpenGL, input (mouse/teclado) e temporização. |
-| **GLAD** | 0.1.36+ | Carregador de *pointers* de função OpenGL (funções GL). |
-| **GLM (OpenGL Mathematics)** | 0.9.9+ | Biblioteca de matemática de vetores e matrizes, essencial para as transformações 3D (Model, View, Projection). |
-| **Assimp (Open Asset Import Library)** | 5.0+ | Carregamento de diversos formatos de modelos 3D (e.g., `.obj`, `.fbx`, `.dae`), abstraindo a leitura da malha. |
-| **iOSTREAM/cmath/vector** | C++ Standard Library | Funções básicas de I/O, matemática (trigonometria) e gerenciamento de dados (*containers*). |
+| **SDL (Simple DirectMedia Layer)** | 3.0+ | Window management, OpenGL context, input (mouse/keyboard), and timing. |
+| **GLAD** | 0.1.36+ | OpenGL function *pointer* loader (GL functions). |
+| **GLM (OpenGL Mathematics)** | 0.9.9+ | Vector and matrix mathematics library, essential for 3D transformations (Model, View, Projection). |
+| **Assimp (Open Asset Import Library)** | 5.0+ | Loading of various 3D model formats (e.g., `.obj`, `.fbx`, `.dae`), abstracting mesh reading. |
+| **iOSTREAM/cmath/vector** | C++ Standard Library | Basic I/O, mathematical functions (trigonometry), and data management (*containers*). |
 
 ---
 
-## ⚙️ Arquitetura e Detalhes Técnicos
+## ⚙️ Architecture and Technical Details
 
-O Aurora não é um motor de jogo (Game Engine), mas sim o **coração gráfico** de baixo nível, garantindo a máxima eficiência e controle.
+Aurora is not a full Game Engine, but rather the low-level **graphics core**, ensuring maximum efficiency and control.
 
-### 1. Core e Performance
+### 1. Core and Performance
 
-* **Linguagem Base:** **C++**. Priorizamos o C++ para controle total sobre o *hardware* e o tempo de execução.
-* **Controle de Memória:** Arquitetura focada em **alocação de memória manual e otimizada**. Isso elimina os *gargalos* do *garbage collector* e garante que a manipulação de grandes malhas de vértices (*meshes*) seja ultrarrápida.
-* **Backend Gráfico:** Utilizamos **OpenGL 3.3+** (orquestrado via GLAD) para alto desempenho e portabilidade.
+* **Base Language:** **C++**. We prioritize C++ for total control over the *hardware* and runtime.
+* **Memory Control:** Architecture focused on **manual and optimized memory allocation**. This eliminates *garbage collector* overhead and ensures that manipulating large vertex *meshes* is ultra-fast.
+* **Graphics Backend:** We use **OpenGL 3.3+** (orchestrated via GLAD) for high performance and portability.
 
-### 2. Extensibilidade
+### 2. Extensibility
 
-* **Motor de Script:** O motor gráfico está arquitetado para suportar *bindings* de **C#** e **LUA**. Isso permitirá que a comunidade crie *plugins* de terceiros, *parsers* de formatos específicos e ferramentas de automação usando linguagens gerenciadas.
-* **Pipeline de Rendering:** O sistema de *shaders* é modular, permitindo que os usuários configurem o *pipeline* para simular com precisão o ambiente de iluminação do seu jogo de destino.
+* **Scripting Engine:** The graphics engine is architected to support **C#** and **LUA bindings**. This will allow the community to create third-party *plugins*, specific format *parsers*, and automation tools using managed languages (FUTURE).
+* **Rendering Pipeline:** The *shader* system is modular, allowing users to configure the *pipeline* to accurately simulate the lighting environment of their target game (FOR DEVS WHO WILL MODIFY THE SOURCE CODE).
 
 ---
 
-## 🎯 Objetivo Principal (Validação de Assets)
+## 🎯 Main Objective (Asset Validation)
 
-O Aurora Render serve como a última linha de defesa contra *bugs* visuais em *mods*:
+Aurora Render serves as the last line of defense against visual *bugs* in *mods*:
 
-| Recurso | Função | Importância |
+| Feature | Function | Importance |
 | :--- | :--- | :--- |
-| **Visualização de Normais** | Checagem de iluminação e vetores normais em **tempo real**. | **CRÍTICO:** Garante que o *shading* do modelo esteja correto (sem faces escuras/cinzas) para jogos mais antigos. |
-| **Matrizes de Transformação** | Ajuste fino de **Escala, Rotação e Translação**. | **ESSENCIAL:** Corrige problemas de **pivô** e **escala** que quebram a geometria ou a posição do *asset* no jogo. |
-| **Câmera 6DOF** | Câmera livre e controlável (FPS Style) com o mouse. | **FÁCIL INSPEÇÃO:** Permite a navegação rápida para inspeção de todos os ângulos da malha. |
+| **Normal Visualization** | **Real-time** check of lighting and normal vectors. | **CRITICAL:** Ensures the model's *shading* is correct (no dark/gray faces) for older games. |
+| **Transformation Matrices** | Fine-tuning of **Scale, Rotation, and Translation**. | **ESSENTIAL:** Corrects **pivot** and **scale** issues that break the geometry or position of the *asset* in the game. |
+| **6DOF Camera** | Free and controllable camera (FPS Style) with the mouse. | **EASY INSPECTION:** Allows rapid navigation for inspecting all mesh angles. |
 
 ---
 
-## 🚀 Status e Compatibilidade
+## 🚀 Status and Compatibility
 
-| Plataforma | Status | Notas |
+| Platform | Status | Notes |
 | :--- | :--- | :--- |
-| **Windows** | Instavel (Protótipo) | Foco principal e em desenvolvimento, completamente instavel porem fucional. |
-| **Linux** | Em Desenvolvimento | Portabilidade ativa via OpenGL/SDL. |
-| **Android** | Planejado | Suporte futuro para visualização móvel de *assets*. |
+| **Windows** | Unstable (Prototype) | Primary focus and under active development; currently unstable but functional. |
+| **Linux** | In Development | Active portability via OpenGL/SDL. |
+| **Android** | Planned | Future support for mobile asset visualization. |
 
 ---
 
-## 🤝 Código Aberto e Contribuição
+## 🤝 Open Source and Contribution
 
-O **Aurora Render será Open Source**. Encorajamos a comunidade a se juntar a nós!
+**Aurora Render will be Open Source.** We encourage the community to join us!
 
-1.  **Reporte Bugs:** Abra uma *issue* para qualquer falha.
-2.  **Otimização C++:** Contribua com *Pull Requests* (PRs) para otimizar o *core* e o gerenciamento de memória.
-3.  **Desenvolvimento de Plugins:** Utilize as *bindings* de C# e LUA (futuras) para criar ferramentas específicas para a comunidade.
+1.  **Report Bugs:** Open an *issue* for any malfunction.
+2.  **C++ Optimization:** Contribute *Pull Requests* (PRs) to optimize the *core* and memory management.
+3.  **Plugin Development:** Utilize the C# and LUA *bindings* (future) to create specific tools for the community.
 
-**Fique ligado para o primeiro *alpha release* e o Guia de Contribuição completo!**
+**Stay tuned for the first *alpha release* and the complete Contribution Guide!**
