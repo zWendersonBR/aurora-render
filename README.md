@@ -5,7 +5,7 @@
 
 ## Renderizador Gráfico de Baixo Nível, Open Source.
 
-O **Aurora Render** é um **Renderizador e Motor Gráfico** focado em performance e controle, criado especificamente para a comunidade de **Modding** e Desenvolvimento de Assets 3D. Nossa missão é oferecer uma plataforma rápida e precisa para inspecionar, validar e preparar seus modelos 3D antes de injetá-los em jogos como **MTA/SAMP** e simuladores que suportam customização.
+O **Aurora Render** é um **Renderizador e Motor Gráfico** focado em performance e controle, criado especificamente para a comunidade de **Modding** e Desenvolvimento de Assets 3D. Nossa missão é oferecer uma plataforma rápida e precisa para inspecionar, validar e preparar seus modelos 3D antes de injetá-los em jogos como **MTA/FiveM/DayZ/ARK** e simuladores que suportam customização.
 
 ---
 
