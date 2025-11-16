@@ -57,7 +57,7 @@ O Aurora Render serve como a última linha de defesa contra *bugs* visuais em *m
 
 | Plataforma | Status | Notas |
 | :--- | :--- | :--- |
-| **Windows** | Estável (Protótipo) | Foco principal do desenvolvimento inicial. |
+| **Windows** | Instavel (Protótipo) | Foco principal e em desenvolvimento, completamente instavel porem fucional. |
 | **Linux** | Em Desenvolvimento | Portabilidade ativa via OpenGL/SDL. |
 | **Android** | Planejado | Suporte futuro para visualização móvel de *assets*. |
 
