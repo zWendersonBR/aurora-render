@@ -2,7 +2,7 @@
 
 ![Demonstração da rotação do modelo na Aurora Render](assets/demo.gif)
 
-## Renderizador e Motor Gráfico de Baixo Nível, Open Source.
+## Renderizador Gráfico de Baixo Nível, Open Source.
 
 O **Aurora Render** é um **Renderizador e Motor Gráfico** focado em performance e controle, criado especificamente para a comunidade de **Modding** e Desenvolvimento de Assets 3D. Nossa missão é oferecer uma plataforma rápida e precisa para inspecionar, validar e preparar seus modelos 3D antes de injetá-los em jogos como **MTA/SAMP** e simuladores que suportam customização.
 
